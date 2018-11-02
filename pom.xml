@@ -18,12 +18,24 @@
     </dependency>
   </dependencies>
 
+  <!--
+  setting.xml中的
+  <server>
+      <id>exercise nexus</id>
+      ...
+   </server>
+  -->
   <distributionManagement>
     <repository>
       <id>exercise nexus</id>
-      <name>exercise lib</name>
-      <url>http://localhost:8081/repository/exercise-lib-local/</url>
+      <name>exercise lib release</name>
+      <url>http://localhost:8081/repository/exercise-libs-release/</url><!--nexus Setting: Type:hosted; Version policy:Release-->
     </repository>
+    <snapshotRepository>
+      <id>exercise nexus</id>
+      <name>exercise lib snapshot</name>
+      <url>http://localhost:8081/repository/exercise-libs-snapshot/</url><!--nexus Setting: Type:hosted; Version policy:Snapshot-->
+    </snapshotRepository>
   </distributionManagement>
 
 </project>

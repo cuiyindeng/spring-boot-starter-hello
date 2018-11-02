@@ -17,16 +17,22 @@ import org.springframework.context.annotation.Configuration;
  * @author
  *
  */
-@Configuration // 标记当前类是配置类
-@EnableConfigurationProperties(HelloServiceProperties.class) // 使用java类作为配置文件
-@ConditionalOnClass(HelloService.class) // 需要被配置的类
+//标记当前类是配置类
+@Configuration
+/**
+ * 使用java类作为配置文件。会把java配置类注册到spring容器中。
+ * @see org.springframework.boot.context.properties.EnableConfigurationPropertiesImportSelector.ConfigurationPropertiesBeanRegistrar
+ */
+@EnableConfigurationProperties(HelloServiceProperties.class)
+@ConditionalOnClass(HelloService.class) //需要被配置的类
 @ConditionalOnProperty(prefix = "hello", value = "enable", matchIfMissing = true)
+//扫描需要注册的Bean。
 @ComponentScan(basePackages = {
         "com.exercise.hello"
 })
 public class HelloServiceAutoconfiguration {
 
-    // 自动注入配置
+    //自动注入配置类
     @Autowired
     private HelloServiceProperties helloServiceProperties;
 
