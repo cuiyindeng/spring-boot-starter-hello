@@ -20,8 +20,10 @@ import org.springframework.context.annotation.Configuration;
 //标记当前类是配置类
 @Configuration
 /**
- * 使用java类作为配置文件。会把java配置类注册到spring容器中。
+ * 使用java类作为配置文件。其中的参数配置类可以不添加@Configuration。
+ * @EnableConfigurationProperties 会把java配置类注册到spring容器中。
  * @see org.springframework.boot.context.properties.EnableConfigurationPropertiesImportSelector.ConfigurationPropertiesBeanRegistrar
+ * 如果其他配置类不用此注解来加载，则必须添加@Configuration或者@Component，由spring扫描识别并加载。
  */
 @EnableConfigurationProperties(HelloServiceProperties.class)
 @ConditionalOnClass(HelloService.class) //需要被配置的类
