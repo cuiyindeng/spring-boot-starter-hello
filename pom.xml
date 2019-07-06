@@ -29,12 +29,12 @@
     <repository>
       <id>exercise nexus</id>
       <name>exercise lib release</name>
-      <url>http://localhost:8081/repository/exercise-lib-releases/</url><!--nexus Setting: Type:hosted; Version policy:Release-->
+      <url>http://192.168.152.131:8081/repository/exercise-lib-releases/</url><!--nexus Setting: Type:hosted; Version policy:Release-->
     </repository>
     <snapshotRepository>
       <id>exercise nexus</id>
       <name>exercise lib snapshot</name>
-      <url>http://localhost:8081/repository/exercise-lib-snapshots/</url><!--nexus Setting: Type:hosted; Version policy:Snapshot-->
+      <url>http://192.168.152.131:8081/repository/exercise-lib-snapshots/</url><!--nexus Setting: Type:hosted; Version policy:Snapshot-->
     </snapshotRepository>
   </distributionManagement>
 
